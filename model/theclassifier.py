@@ -34,8 +34,8 @@ class Ourmodel():
         df.drop(["Individu-ID", ], axis=1, inplace=True)
 
         # delete all collumns with a questionmark
-        for col in df.columns.tolist():
-            df = df.drop(df[df[col] == "?"].index)
+        df.replace("?", np.NaN, inplace=True)
+        df.bfill(inplace=True)
 
         #veranderen van type naar een int
         to_int = ["opleidingsniveau", "cholesterol", "glucose", "BMI", "hartslag", "cigaretten_per_dag", "slaapscore", "onderdruk", "bovendruk"]
