@@ -1,9 +1,10 @@
 import pandas as pd
 import pickle
+import numpy as np
 
 class Ourmodel():
     """
-    leg uit :)
+    Ons model
     """
     def predict(self, filename):
         """
@@ -58,4 +59,4 @@ class Ourmodel():
 
         yhat = model.predict(X)
 
-        return yhat
+        return  np.where(yhat == 0, 'CHD-', 'CHD+')

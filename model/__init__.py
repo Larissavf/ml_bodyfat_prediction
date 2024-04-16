@@ -1,9 +1,9 @@
 """
-meukjes
+the classifier for the competition
 xx
 Girlypopz
 """
-from .meuk import Ourmodel
+from .theclassifier import Ourmodel
 
 
 def model_factory():
